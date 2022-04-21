@@ -9,11 +9,11 @@ import org.springframework.web.client.RestTemplate;
 
 /**
  * @author peng
- * @date 2022/2/24
+ * @date 2022/4/21
  */
 @SpringBootApplication
 @EnableEurekaClient
-public class EurekaClientApplication {
+public class ServiceConsumerApplication {
 
     @Bean
     @LoadBalanced //负载均衡
@@ -22,6 +22,6 @@ public class EurekaClientApplication {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(EurekaClientApplication.class, args);
+        SpringApplication.run(ServiceConsumerApplication.class, args);
     }
 }
