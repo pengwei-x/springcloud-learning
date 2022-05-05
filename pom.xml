@@ -19,6 +19,7 @@
         <module>eureka-server8001</module>
         <module>eureka-server8002</module>
         <module>service-consumer-rest</module>
+        <module>service-consumer-feign</module>
         <module>service-provider</module>
     </modules>
 
