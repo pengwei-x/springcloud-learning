@@ -1,23 +1,24 @@
 server:
-  port: 8001
+  port: 7001
 
 spring:
   application:
-    name: eureka-server
+    name: service-provider
 
 eureka:
   instance:
-    hostname: eureka-server8001 #eureka服务端的实例名称
+    hostname: service-provider #eureka服务端的实例名称
     prefer-ip-address: true  #是否使用ip+端口展示
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
   client:
-#    register-with-eureka: false     #false表示不向注册中心注册自己。 单节点关闭
-#    fetch-registry: false     #false表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务
+    register-with-eureka: true     #false表示不向注册中心注册自己。 单节点关闭
+    fetch-registry: true     #false表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务
     service-url:
       #集群指向其它eureka
-      defaultZone: http://127.0.0.1:8002/eureka/
+      defaultZone: http://127.0.0.1:8002/eureka/,http://127.0.0.1:8001/eureka/
       #单机就是自己
 #      defaultZone: http://127.0.0.1:8001/eureka/
+
     #server:
     #关闭自我保护机制，保证不可用服务被及时踢除
     #enable-self-preservation: false
