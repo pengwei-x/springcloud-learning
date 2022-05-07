@@ -21,6 +21,8 @@
         <module>service-consumer-rest</module>
         <module>service-consumer-feign</module>
         <module>service-provider</module>
+        <module>zuul-server</module>
+        <module>cloud-gateway-gateway9527</module>
     </modules>
 
     <dependencies>
@@ -34,6 +36,16 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
+        <!--boot web actuator-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-web</artifactId>-->
+<!--        </dependency>-->
+
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-actuator</artifactId>-->
+<!--        </dependency>-->
     </dependencies>
 
     <dependencyManagement>

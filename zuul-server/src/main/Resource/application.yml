@@ -1,0 +1,22 @@
+server:
+  port: 6001
+
+spring:
+  application:
+    name: zuul-server
+#简化配置，不需要任何配置  直接url:http://127.0.0.1:6001/service-provider/product/list
+#zuul:
+#  routes:
+#    service-provider:
+#      path: /**
+##      url: http://127.0.0.1:7001/product/list
+#      serviceId: service-provider
+
+eureka:
+  instance:
+    prefer-ip-address: true  #是否使用ip+端口展示
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    service-url:
+      #集群指向其它eureka
+      defaultZone: http://127.0.0.1:8002/eureka/,http://127.0.0.1:8001/eureka/
