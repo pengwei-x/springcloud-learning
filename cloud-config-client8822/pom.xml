@@ -9,18 +9,21 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>service-consumer-feign</artifactId>
+    <groupId>com.pw</groupId>
+    <artifactId>cloud-config-client8822</artifactId>
 
     <dependencies>
 
+        <!--引入消息总线 rabbitMQ-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
         </dependency>
+
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
 
         <dependency>
@@ -32,7 +35,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-
     </dependencies>
+
 
 </project>
